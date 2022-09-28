@@ -121,7 +121,6 @@ namespace Lab.Practica.Ef.UI
                     frmEditEmployee.txtRegionEmp.Text = dgvListAll.CurrentRow.Cells[9].Value.ToString();
                 }
 
-
                 frmEditEmployee.txtCodePostalEmp.Text = dgvListAll.CurrentRow.Cells[10].Value.ToString();
 
                 frmEditEmployee.txtCountryEmp.Text = dgvListAll.CurrentRow.Cells[11].Value.ToString();
