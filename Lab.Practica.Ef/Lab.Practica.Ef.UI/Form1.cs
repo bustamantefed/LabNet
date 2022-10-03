@@ -394,6 +394,11 @@ namespace Lab.Practica.Ef.UI
             Application.Exit();
         }
 
+        private void btnLinq_Click(object sender, EventArgs e)
+        {
+            FrmLiqn LINQfrm = new FrmLiqn();
+            LINQfrm.ShowDialog();
+        }
     }
 }
 

@@ -31,6 +31,7 @@ namespace Lab.Practica.Ef.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnLinq = new System.Windows.Forms.Button();
             this.btnAllSuppliers = new System.Windows.Forms.Button();
             this.btnAllShippers = new System.Windows.Forms.Button();
             this.btnAllEmployees = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@ namespace Lab.Practica.Ef.UI
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.splitContainer1.Panel1.Controls.Add(this.btnLinq);
             this.splitContainer1.Panel1.Controls.Add(this.btnAllSuppliers);
             this.splitContainer1.Panel1.Controls.Add(this.btnAllShippers);
             this.splitContainer1.Panel1.Controls.Add(this.btnAllEmployees);
@@ -101,9 +103,19 @@ namespace Lab.Practica.Ef.UI
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvListAll);
             this.splitContainer1.Panel2.Controls.Add(this.btnExitForm);
-            this.splitContainer1.Size = new System.Drawing.Size(1027, 434);
-            this.splitContainer1.SplitterDistance = 162;
+            this.splitContainer1.Size = new System.Drawing.Size(1027, 461);
+            this.splitContainer1.SplitterDistance = 187;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btnLinq
+            // 
+            this.btnLinq.Location = new System.Drawing.Point(471, 159);
+            this.btnLinq.Name = "btnLinq";
+            this.btnLinq.Size = new System.Drawing.Size(162, 23);
+            this.btnLinq.TabIndex = 174;
+            this.btnLinq.Text = "Consultas LINQ";
+            this.btnLinq.UseVisualStyleBackColor = true;
+            this.btnLinq.Click += new System.EventHandler(this.btnLinq_Click);
             // 
             // btnAllSuppliers
             // 
@@ -354,14 +366,14 @@ namespace Lab.Practica.Ef.UI
             this.dgvListAll.Name = "dgvListAll";
             this.dgvListAll.ReadOnly = true;
             this.dgvListAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListAll.Size = new System.Drawing.Size(1027, 245);
+            this.dgvListAll.Size = new System.Drawing.Size(1027, 247);
             this.dgvListAll.TabIndex = 149;
             // 
             // btnExitForm
             // 
             this.btnExitForm.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExitForm.FlatAppearance.BorderSize = 0;
-            this.btnExitForm.Location = new System.Drawing.Point(0, 245);
+            this.btnExitForm.Location = new System.Drawing.Point(0, 247);
             this.btnExitForm.Name = "btnExitForm";
             this.btnExitForm.Size = new System.Drawing.Size(1027, 23);
             this.btnExitForm.TabIndex = 148;
@@ -373,7 +385,7 @@ namespace Lab.Practica.Ef.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 434);
+            this.ClientSize = new System.Drawing.Size(1027, 461);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -416,5 +428,6 @@ namespace Lab.Practica.Ef.UI
         private System.Windows.Forms.Button btnAllSuppliers;
         private System.Windows.Forms.Button btnAllShippers;
         private System.Windows.Forms.Button btnAllEmployees;
+        private System.Windows.Forms.Button btnLinq;
     }
 }

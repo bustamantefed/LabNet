@@ -24,8 +24,8 @@ namespace Lab.Practica.Ef.Entities
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
 
-        [Column(TypeName = "image")]
-        public byte[] Picture { get; set; }
+        //[Column(TypeName = "image")]
+        //public byte[] Picture { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Products> Products { get; set; }

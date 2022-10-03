@@ -80,6 +80,12 @@
     <Compile Include="AddEntities\FrmAddSuppliers.Designer.cs">
       <DependentUpon>FrmAddSuppliers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifyEntities\ModifyEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEntities\FrmAddSuppliers.resx">
       <DependentUpon>FrmAddSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyEntities\ModifyEmployee.resx">
       <DependentUpon>ModifyEmployee.cs</DependentUpon>
