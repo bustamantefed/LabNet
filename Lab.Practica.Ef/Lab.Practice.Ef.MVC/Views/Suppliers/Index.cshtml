@@ -1,0 +1,46 @@
+﻿@model List<Lab.Practice.Ef.MVC.Models.SuppliersView>
+
+@{
+    ViewBag.Title = "Lista de  proveedores";
+}
+<h1>Total de proovedor en la empresa</h1>
+<div style="text-align:right; padding:5px" ;>
+    <a href="~/Views/Suppliers/InsertSuppliers.cshtml" class="btn btn-primary">Agregar nuevo proveedor </a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre compañia</th>
+            <th scope="col">Nombre vendedor</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Codigo postal</th>
+            <th scope="col">País</th>
+            <th scope="col">Teléfono</th>
+            <th scole="col">Botones</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var suppliers in Model)
+        {
+        <tr>
+            <th scope="row">@suppliers.SupplierID</th>
+            <td>@suppliers.CompanyName</td>
+            <td>@suppliers.ContactName</td>
+            <td>@suppliers.ContactTitle</td>
+            <td>@suppliers.Address</td>
+            <td>@suppliers.City</td>
+            <td>@suppliers.PostalCode</td>
+            <td>@suppliers.Country</td>
+            <td>@suppliers.Phone</td>
+            <td class="btn btn-danger" style="width: 77px">@Html.ActionLink("Delete", "Delete", new { suplierID = suppliers.SupplierID }, new { onclick = "return confirm('Esta seguro de eliminar?')" }) </td>
+            <td class="btn btn-default" style="width: 77px">@Html.ActionLink("Edit", "Edit", new { suplierID = suppliers.SupplierID }, new { onclick = "return confirm('Esta seguro de editar?')" }) </td>
+        </tr>
+        }
+
+    </tbody>
+</table>

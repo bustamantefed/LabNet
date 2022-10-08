@@ -1,0 +1,54 @@
+﻿@model Lab.Practice.Ef.MVC.Models.SuppliersView
+@{
+    ViewBag.Title = "Agregar proovedor";
+}
+<form action="" class="formulario" method="post">
+    <div class="col-md-12">
+        <fieldset class="fieldset">
+            <legend class="formulario" style="text-align:center"> Complete datos del proveedor nuevo:</legend>
+            <div>
+                <label>Nombre proveedor:</label> @Html.TextBoxFor(s => s.CompanyName, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.CompanyName, null, new { @class = "Danger" })
+            </div>
+
+            <div>
+                <label>Nombre contacto proovedor:</label> @Html.TextBoxFor(s => s.ContactName, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.ContactName, null, new { @class = "Danger" })
+            </div>
+
+            <div>
+                <label>Titulo:</label> @Html.TextBoxFor(s => s.ContactTitle, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Dirección:</label> <br /> @Html.EditorFor(s => s.Address, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Ciudad:</label>  <br />  @Html.EditorFor(s => s.City, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Region:</label> @Html.TextBoxFor(s => s.Region, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Codigo postal:</label> @Html.TextBoxFor(s => s.PostalCode, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>País:</label> @Html.TextBoxFor(s => s.Country, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Teléfono:</label> @Html.TextBoxFor(s => s.Phone, "", new { @class = "form-control" })
+            </div>
+
+        </fieldset>
+    </div>
+
+    <div style="text-align:right;">
+        <input value="Guardar" class="btn btn-primary" type="submit" />
+    </div>
+
+</form>

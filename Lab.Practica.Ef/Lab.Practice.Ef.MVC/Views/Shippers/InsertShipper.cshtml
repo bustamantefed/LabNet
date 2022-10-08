@@ -1,0 +1,26 @@
+﻿@model Lab.Practice.Ef.MVC.Models.ShippersView
+
+@{
+    ViewBag.Title = "Agregar Transportista ";
+}
+
+
+<form action="" class="formulario" method="post">
+    <div class="col-md-12">
+        <fieldset class="fieldset">
+            <legend class="formulario" style="text-align:center"> Complete datos del transportista nuevo:</legend>
+            <div>
+                <label>Compañia del transportista:</label> @Html.TextBoxFor(s => s.CompanyName, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.CompanyName, null, new { @class = "Danger" })
+            </div>
+
+            <div>
+                <label>Número de teléfono:</label> @Html.TextBoxFor(s => s.Phone, "", new { @class = "form-control" })
+            </div>
+        </fieldset>
+    </div>
+
+    <div style="text-align:right;">
+        <input value="Guardar" class="btn btn-primary" type="submit" />
+    </div>
+</form>

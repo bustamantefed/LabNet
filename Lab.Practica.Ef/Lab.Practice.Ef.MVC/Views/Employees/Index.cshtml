@@ -1,0 +1,55 @@
+﻿
+@model List<Lab.Practice.Ef.MVC.Models.EmployeesView>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1>Total de Empleados en la empresa</h1>
+<div style="text-align:right; padding:5px";>
+    <a href="~/Employees/InsertEmployee" class="btn btn-primary" >Agregar nuevo empleado </a>
+</div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Cumpleaños</th>
+                    <th scope="col">Contratación</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">País</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Codigo postal</th>
+                    <th scope="col">Teléfono</th>
+                    <th scole="col">Botones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var Employee in Model)
+                {
+                <tr>
+                    <th scope="row">@Employee.Id</th>
+                    <td>@Employee.LastName</td>
+                    <td>@Employee.FirstName</td>
+                    <td>@Employee.Tittle</td>
+                    <td>@Employee.BirthDate</td>
+                    <td>@Employee.HireDate</td>
+                    <td>@Employee.Address</td>
+                    <td>@Employee.Country</td>
+                    <td>@Employee.City</td>
+                    <td>@Employee.Region</td>
+                    <td>@Employee.PostalCode</td>
+                    <td>@Employee.Phone</td>
+                    <td class="btn btn-danger" style="width: 77px">@Html.ActionLink("Delete", "Delete", new { id = Employee.Id }, new { onclick = "return confirm('Esta seguro de eliminar?')" }) </td>
+                    <td class="btn btn-default" style="width: 77px" >@Html.ActionLink("Edit", "Edit", new { id = Employee.Id }, new { onclick = "return confirm('Esta seguro de editar?')" }) </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+

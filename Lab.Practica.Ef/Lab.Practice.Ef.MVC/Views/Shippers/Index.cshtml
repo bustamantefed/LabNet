@@ -1,0 +1,34 @@
+﻿@model List<Lab.Practice.Ef.MVC.Models.ShippersView>
+
+@{
+    ViewBag.Title = "Lista de transportistas";
+}
+
+<h1>Total de Tranposrtistas en la empresa</h1>
+<div style="text-align:right; padding:5px" ;>
+    <a href="~/Views/Shippers/InsertShipper.cshtml" class="btn btn-primary">Agregar nuevo transportista </a>
+</div>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre de la compañia</th>
+                <th scope="col">Teléfono</th>
+                <th scole="col">Botones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Shipper in Model)
+            {
+            <tr>
+                <th scope="row">@Shipper.Id</th>
+                <td>@Shipper.CompanyName</td>
+                <td>@Shipper.Phone</td>
+                        <td class="btn btn-danger" style="width: 77px">@Html.ActionLink("Delete", "Delete", new { id = Shipper.Id }, new { onclick = "return confirm('Esta seguro de eliminar?')" }) </td>
+                        <td class="btn btn-default" style="width: 77px">@Html.ActionLink("Edit", "Edit", new { id = Shipper.Id }, new { onclick = "return confirm('Esta seguro de editar?')" }) </td>
+             </tr>
+            }
+        </tbody>
+    </table>
+</div>

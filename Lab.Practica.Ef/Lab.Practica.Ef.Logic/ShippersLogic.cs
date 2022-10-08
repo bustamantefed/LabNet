@@ -13,31 +13,75 @@ namespace Lab.Practica.Ef.Logic
     
         public List<Shippers> GetAll()
         {
-            return context.Shippers.ToList();
+            try
+            {
+                return context.Shippers.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         public void Add(Shippers AddNew)
         {
-            context.Shippers.Add(AddNew);
-            context.SaveChanges();
+            try
+            {
+                context.Shippers.Add(AddNew);
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
         public void Delete(int id)
         {
+            try
+            {
+                var shippersDeleted = context.Shippers.Find(id);
+                context.Shippers.Remove(shippersDeleted);
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
 
-            var shippersDeleted = context.Shippers.Find(id);
-            context.Shippers.Remove(shippersDeleted);
-            context.SaveChanges();
+                throw;
+            }
+        
         }
         public void Update(Shippers updateT)
         {
-            var modifyShipper = context.Shippers.Find(updateT.ShipperID);
-            modifyShipper.CompanyName = updateT.CompanyName;
-            modifyShipper.Phone = updateT.Phone;
-            context.SaveChanges();
+            try
+            {
+                var modifyShipper = context.Shippers.Find(updateT.ShipperID);
+                modifyShipper.CompanyName = updateT.CompanyName;
+                modifyShipper.Phone = updateT.Phone;
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public List<Shippers> Filter(string a)
         {
-            return context.Shippers.Where(x => x.CompanyName.Contains(a)).ToList();
+            try
+            {
+                return context.Shippers.Where(x => x.CompanyName.Contains(a)).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
     }
 }

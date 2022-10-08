@@ -1,0 +1,65 @@
+﻿@model Lab.Practice.Ef.MVC.Models.EmployeesView
+@{
+    ViewBag.Title = "Agregar empleado";
+}
+<form action="" class="formulario" method="post">
+
+
+    <div class="col-md-12">
+        <fieldset class="fieldset">
+            @Html.HiddenFor(e => e.Id);
+            <legend class="formulario" style="text-align:center"> Complete datos del empleado nuevo:</legend>
+            <div>
+                <label>Apellido empleado:</label> @Html.TextBoxFor(e => e.LastName, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(e => e.LastName, null, new { @class = "Danger" })
+            </div>
+
+            <div>
+                <label>Nombre empleado:</label> @Html.TextBoxFor(e => e.FirstName, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(e => e.FirstName, null, new { @class = "Danger" })
+            </div>
+
+            <div>
+                <label>Titulo empleado:</label> @Html.TextBoxFor(e => e.Tittle, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Cumpleaños empleado:</label> <br /> @Html.EditorFor(e => e.BirthDate, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Contratación empleado:</label>  <br />  @Html.EditorFor(e => e.HireDate, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Dirección empleado:</label> @Html.TextBoxFor(e => e.Address, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>País empleado:</label> @Html.TextBoxFor(e => e.Country, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Ciudad empleado:</label> @Html.TextBoxFor(e => e.City, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Region empleado:</label> @Html.TextBoxFor(e => e.Region, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Codigo postal empleado:</label> @Html.TextBoxFor(e => e.PostalCode, "", new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Teléfonoempleado:</label> @Html.TextBoxFor(e => e.Phone, "", new { @class = "form-control" })
+            </div>
+
+        </fieldset>
+    </div>
+
+    <div style="text-align:right;">
+        <input value="Guardar empleado" class="btn btn-primary" type="submit" />
+    </div>
+</form>
+

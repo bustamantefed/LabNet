@@ -11,44 +11,100 @@ namespace Lab.Practica.Ef.Logic
     {
         public void Add(Suppliers AddNew)
         {
-            context.Suppliers.Add(AddNew);
-            context.SaveChanges();
+            try
+            {
+                context.Suppliers.Add(AddNew);
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
         public void Delete(int id)
         {
-            var suppliersDeleted = context.Suppliers.Find(id);
-            context.Suppliers.Remove(suppliersDeleted);
-            context.SaveChanges();
+            try
+            {
+                var suppliersDeleted = context.Suppliers.Find(id);
+                context.Suppliers.Remove(suppliersDeleted);
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+            
         }
         public void Update(Suppliers updateT)
-        {    
-            var modifySuppliers = context.Suppliers.Find(updateT.SupplierID);
-            modifySuppliers.CompanyName = updateT.CompanyName;
-            modifySuppliers.ContactName = updateT.ContactName;
-            modifySuppliers.ContactTitle = updateT.ContactTitle;
-            modifySuppliers.Address = updateT.Address;
-            modifySuppliers.City = updateT.City;
-            modifySuppliers.Region = updateT.Region;
-            modifySuppliers.PostalCode = updateT.PostalCode;
-            modifySuppliers.Country = updateT.Country;
-            modifySuppliers.Phone = updateT.Phone;
-            modifySuppliers.Fax = updateT.Fax;
-            modifySuppliers.HomePage = updateT.HomePage;
-            context.SaveChanges();
+        {
+            try
+            {
+                var modifySuppliers = context.Suppliers.Find(updateT.SupplierID);
+                modifySuppliers.CompanyName = updateT.CompanyName;
+                modifySuppliers.ContactName = updateT.ContactName;
+                modifySuppliers.ContactTitle = updateT.ContactTitle;
+                modifySuppliers.Address = updateT.Address;
+                modifySuppliers.City = updateT.City;
+                modifySuppliers.Region = updateT.Region;
+                modifySuppliers.PostalCode = updateT.PostalCode;
+                modifySuppliers.Country = updateT.Country;
+                modifySuppliers.Phone = updateT.Phone;
+                modifySuppliers.Fax = updateT.Fax;
+                modifySuppliers.HomePage = updateT.HomePage;
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         public List<Suppliers> GetAll()
         {
-            return context.Suppliers.ToList();
+            try
+            {
+                return context.Suppliers.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public Suppliers  GetById(int id)
         {
-            return context.Suppliers.Find(id);
+            try
+            {
+                return context.Suppliers.Find(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public List<Suppliers> Filter(string a)
         {
-            return context.Suppliers.Where(x => x.CompanyName.Contains(a)).ToList();
+            try
+            {
+                return context.Suppliers.Where(x => x.CompanyName.Contains(a)).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
     }
+
+
 }

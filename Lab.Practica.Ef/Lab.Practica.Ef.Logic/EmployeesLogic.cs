@@ -22,33 +22,56 @@ namespace Lab.Practica.Ef.Logic
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+               throw  ex; 
             }
 
         }
 
         public void Update(Employees updateT)
         {
-            var modifyEmployee = context.Employees.Find(updateT.EmployeeID);
-            modifyEmployee.LastName = updateT.LastName;
-            modifyEmployee.FirstName = updateT.FirstName;
-            modifyEmployee.Title = updateT.Title;
-            modifyEmployee.BirthDate = updateT.BirthDate;
-            modifyEmployee.HireDate = updateT.HireDate;
-            modifyEmployee.Address = updateT.Address;
-            modifyEmployee.City = updateT.City;
-            modifyEmployee.Region = updateT.Region;
-            modifyEmployee.PostalCode = updateT.PostalCode;
-            modifyEmployee.Country = updateT.Country;
-            modifyEmployee.HomePhone = updateT.HomePhone;
+            try
+            {
+                var modifyEmployee = context.Employees.Find(updateT.EmployeeID);
+                modifyEmployee.LastName = updateT.LastName;
+                modifyEmployee.FirstName = updateT.FirstName;
+                modifyEmployee.Title = updateT.Title;
+                modifyEmployee.BirthDate = updateT.BirthDate;
+                modifyEmployee.HireDate = updateT.HireDate;
+                modifyEmployee.Address = updateT.Address;
+                modifyEmployee.City = updateT.City;
+                modifyEmployee.Region = updateT.Region;
+                modifyEmployee.PostalCode = updateT.PostalCode;
+                modifyEmployee.Country = updateT.Country;
+                modifyEmployee.HomePhone = updateT.HomePhone;
 
-            context.SaveChanges();
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
         }
         public void Delete(int id)
         {
-                var employeesDeleted = context.Employees.Find(id);
-                context.Employees.Remove(employeesDeleted);
-                context.SaveChanges();
+            try
+            {
+
+                int a = id;
+              
+                if (id > 9 || id < a )
+                {
+                    var employeesDeleted = context.Employees.Find(id);
+                    context.Employees.Remove(employeesDeleted);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw  ex ;
+            }
         }
 
         public List<Employees> Filter(string a )
