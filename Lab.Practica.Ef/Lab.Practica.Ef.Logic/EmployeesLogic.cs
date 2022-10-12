@@ -2,15 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Lab.Practica.Ef.Data;
 
 namespace Lab.Practica.Ef.Logic
 {
     public class EmployeesLogic : BaseLogic, IABM<Employees>
     {
 
+
         public List<Employees> GetAll()
-        {
-            return context.Employees.ToList();
+        {        
+                return context.Employees.ToList();            
         }
 
         public void Add(Employees AddNew)
@@ -56,7 +58,10 @@ namespace Lab.Practica.Ef.Logic
             return context.Employees.Where(x => x.FirstName.Contains(a)).ToList();
         }
 
-   
+        public void GetById(int id)
+        {
+            context.Employees.Find(id);
+        }
     }
 }
 

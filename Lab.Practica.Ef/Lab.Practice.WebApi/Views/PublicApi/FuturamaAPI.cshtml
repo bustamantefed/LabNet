@@ -1,0 +1,22 @@
+﻿@model List<Lab.Practice.WebApi.Models.FuturamaAPI>
+
+<h2>Futurama API</h2>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Quote</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+      @foreach (var caracter in Model)
+            {
+                <tr>
+                    <td scope="row" style="font-weight:bold"> @caracter.character;</td>
+                    <td>  @caracter.quote;</td>
+                    <td> <img src="@caracter.image;" style="width: 30%" /> </td>
+                </tr>
+            }
+    </table>
